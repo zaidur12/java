@@ -11,13 +11,15 @@ public class aaraylist {
 
         student.add(1,"ZR");
          ArrayList<String> student1 = new ArrayList<>();
-        student1.add("Alex");
-        student1.add("Blake");
-        student1.add("Camroon");
-        student1.add("Derek");
-        student1.add("Even");
+        student1.add("Al");
+        student1.add("Bl");
+        student1.add("Cam");
+        student1.add("Der");
+        student1.add("Eve");
 
         student.add(1,"ZR");
+
+        student.addAll(student1);
 
         System.out.println(student);
 
