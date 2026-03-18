@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class aaraylist {
     public static void main(String[] args) {
@@ -9,7 +10,6 @@ public class aaraylist {
         student.add("Derek");
         student.add("Even");
 
-        student.add(1,"ZR");
          ArrayList<String> student1 = new ArrayList<>();
         student1.add("Al");
         student1.add("Bl");
@@ -17,11 +17,20 @@ public class aaraylist {
         student1.add("Der");
         student1.add("Eve");
 
-        student.add(1,"ZR");
+
 
         student.addAll(student1);
+        student.set(0, "tina");
+
 
         System.out.println(student);
+
+        Iterator<String> i = student.iterator();
+        while (i.hasNext()) {
+           System.err.println(i.next()); 
+        }
+
+
 
     }
 }
