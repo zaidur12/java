@@ -8,7 +8,7 @@ public class genmethod {
     static <E> void printdata( E data){
       System.out.println(data);
     }
-     static <E extends String> void Strr (E data){
+     static <E extends  String> void Strr (E data){
         System.out.println(data);
     }
 }
