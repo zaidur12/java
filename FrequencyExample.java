@@ -1,32 +1,53 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class FrequencyExample {
     public static void main(String[] args) {
 
-        ArrayList<String> colours = new ArrayList<>();
+        ArrayList<Integer> colours = new ArrayList<>();
 
-        colours.add("Red");
-        colours.add("Blue");
-        colours.add("Red");
-        colours.add("Green");
-        colours.add("Red");
+        colours.add(1);
+        colours.add(2);
+        colours.add(1);
+        colours.add(2);
+        colours.add(2);
 
-        System.out.println("List of colours: " + colours);
+        // System.out.println("List of colours: " + colours);
+        ListIterator<Integer> iterator = colours.listIterator();
+        while(iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+        System.out.println("----");
+        while(iterator.hasPrevious()){
+            System.out.println(iterator.previous());
+        }
+       LinkedList<String> cars = new LinkedList<String>();
+    cars.add("Volvo");
+    cars.add("BMW");
+    cars.add("Ford");
+    cars.add("Mazda");
+    cars.add("Toyota");
+    
+    LinkedList<String> valid = new LinkedList<String>();
+    valid.add("Volvo");
+    valid.add("Ford");
+    valid.add("Mazda");
+    
+    cars.retainAll(valid);
+    
+    System.out.println(cars);
 
-        HashMap<String, Integer> frequencyMap = new HashMap<>();
+        HashMap<Integer, Integer> frequencyMap = new HashMap<>();
 
-        for (String colour : colours) {
-
-            if (frequencyMap.containsKey(colour)) {
-                int count = frequencyMap.get(colour);
-                frequencyMap.put(colour, count + 1);
-            } 
-            else {
-                frequencyMap.put(colour, 1);
-            }
+        for (Integer colour : colours) {
+            frequencyMap.put(colour, frequencyMap.getOrDefault(colour, 0) + 1);
         }
 
-        System.out.println("Frequency of colours: " + frequencyMap);
+        for (Integer colour : frequencyMap.keySet()) {
+            System.out.println("Colour " + colour + " appears " + frequencyMap.get(colour) + " times");
+        }
+
     }
 }
