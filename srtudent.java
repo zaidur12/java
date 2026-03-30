@@ -4,14 +4,27 @@ import java.util.Map;
 
 public class srtudent {
     public static void main(String[] args) {
-        
-        Map<String,Integer> students= new HashMap<>();
+        Map<String, Integer> students = new HashMap<>();
         students.put("Maths", 98);
-        students.put("English", 98);
-        students.put("Science",78);
+        students.put("English", 67);
+        students.put("Science", 78);
 
         System.out.println(students);
-        System.out.println(Collections.max(students.values()));
 
+        int highestMark = Collections.max(students.values());
+        System.out.println("Highest mark: " + highestMark);
+        
+        int lowestMark=Collections.min(students.values());
+                
+        System.out.println("Lowest mark: " + lowestMark);
+
+
+        System.out.println("Top subject(s):");
+        for (Map.Entry<String, Integer> entry : students.entrySet()) {
+           if (entry.getValue() == highestMark || entry.getValue() == lowestMark) {
+    System.out.println(entry.getKey() + " = " + entry.getValue());
+}
+
+        }
     }
 }
